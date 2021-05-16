@@ -1,0 +1,8 @@
+{
+  "name": "sober_solution",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue",
+  "id": "8704a6c7"
+}
