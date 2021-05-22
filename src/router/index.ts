@@ -32,6 +32,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/drinks-by-igredients/:ingredient',
     component: () => import('@/views/DrinksByIngredient.vue')
+  },
+  {
+    path: '/drink/:id',
+    component: () => import('@/views/Drink.vue')
   }
 ]
 

@@ -18,7 +18,7 @@
         <ion-item
           v-for="drink in state.lstDrinks"
           :key="drink.idDrink"
-          @click="() => router.push(`/drinks/${drink.idDrink}`)"
+          @click="() => router.push(`/drink/${drink.idDrink}`)"
         >
           <ion-avatar slot="start">
             <img :src="drink.strDrinkThumb" />

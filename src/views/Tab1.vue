@@ -14,144 +14,7 @@
       <ion-refresher slot="fixed" @ionRefresh="doRefresh">
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
-      <ion-card>
-        <img :src="state.randomCocktail.strDrinkThumb" />
-        <ion-card-header>
-          <ion-card-subtitle>
-            {{ state.randomCocktail.strCategory }} | served in
-            {{ state.randomCocktail.strGlass }}
-          </ion-card-subtitle>
-          <ion-card-title>
-            {{ state.randomCocktail.strDrink }}
-          </ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
-          <p>{{ state.randomCocktail.strInstructions }}</p>
-          <ion-list-header> Ingredients </ion-list-header>
-          <ion-list>
-            <ion-item v-if="state.randomCocktail.strIngredient1">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure1">
-                  {{ state.randomCocktail.strMeasure1 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient1 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient2">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure2">
-                  {{ state.randomCocktail.strMeasure2 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient2 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient3">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure3">
-                  {{ state.randomCocktail.strMeasure3 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient3 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient4">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure4">
-                  {{ state.randomCocktail.strMeasure4 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient4 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient5">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure5">
-                  {{ state.randomCocktail.strMeasure5 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient5 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient6">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure6">
-                  {{ state.randomCocktail.strMeasure6 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient6 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient7">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure7">
-                  {{ state.randomCocktail.strMeasure7 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient7 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient8">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure8">
-                  {{ state.randomCocktail.strMeasure8 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient8 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient9">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure9">
-                  {{ state.randomCocktail.strMeasure9 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient9 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient10">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure10">
-                  {{ state.randomCocktail.strMeasure10 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient10 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient11">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure11">
-                  {{ state.randomCocktail.strMeasure11 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient11 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient12">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure12">
-                  {{ state.randomCocktail.strMeasure12 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient12 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient13">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure13">
-                  {{ state.randomCocktail.strMeasure13 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient13 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient14">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure14">
-                  {{ state.randomCocktail.strMeasure14 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient14 }}
-              </ion-label>
-            </ion-item>
-            <ion-item v-if="state.randomCocktail.strIngredient15">
-              <ion-label>
-                <span v-if="state.randomCocktail.strMeasure15">
-                  {{ state.randomCocktail.strMeasure15 }} -
-                </span>
-                {{ state.randomCocktail.strIngredient15 }}
-              </ion-label>
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
+      <drink-card :drink="state.randomCocktail"/>
     </ion-content>
   </ion-page>
 </template>
@@ -165,19 +28,11 @@ import {
   IonContent,
   IonRefresher,
   IonSpinner,
-  IonCard,
-  IonCardContent,
-  IonList,
-  IonItem,
-  IonLabel,
-  IonListHeader,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
   IonRefresherContent,
 } from "@ionic/vue";
 import { reactive } from "vue";
 import axios from "axios";
+import DrinkCard from '@/components/DrinkCard.vue';
 
 export default {
   name: "Tab1",
@@ -189,16 +44,8 @@ export default {
     IonPage,
     IonRefresher,
     IonSpinner,
-    IonCard,
-    IonCardContent,
-    IonList,
-    IonItem,
-    IonLabel,
-    IonListHeader,
-    IonCardHeader,
-    IonCardTitle,
-    IonCardSubtitle,
     IonRefresherContent,
+    DrinkCard,
   },
   setup() {
     const state = reactive({
