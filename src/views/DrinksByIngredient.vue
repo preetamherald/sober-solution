@@ -2,7 +2,10 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Search By Ingredient</ion-title>
+        <ion-button slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-button>
+        <ion-title>{{ ingredient }} Drinks</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content v-if="state.loading">
@@ -13,19 +16,16 @@
     <ion-content :fullscreen="true" v-else>
       <ion-list>
         <ion-item
-          v-for="ingredient in state.lstIngredient"
-          :key="ingredient.strIngredient1"
-          @click="
-            () =>
-              router.push(`/drinks-by-igredients/${ingredient.strIngredient1}`)
-          "
+          v-for="drink in state.lstDrinks"
+          :key="drink.idDrink"
+          @click="() => router.push(`/drinks/${drink.idDrink}`)"
         >
           <ion-avatar slot="start">
-            <img :src="ingredientImage(ingredient.strIngredient1)" />
+            <img :src="drink.strDrinkThumb" />
           </ion-avatar>
           <ion-label>
             <h2>
-              {{ ingredient.strIngredient1 }}
+              {{ drink.strDrink }}
             </h2>
           </ion-label>
         </ion-item>
@@ -46,17 +46,21 @@ import {
   IonLabel,
   IonSpinner,
   IonAvatar,
+  IonButton,
+  IonBackButton,
 } from "@ionic/vue";
 import { reactive } from "vue";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
 
-interface Ingredient {
-  strIngredient1: string;
+interface Drink {
+  strDrink: string;
+  strDrinkThumb: string;
+  idDrink: string;
 }
 
 export default {
-  name: "Tab2",
+  name: "DrinksByIngredient",
   components: {
     IonHeader,
     IonToolbar,
@@ -68,45 +72,40 @@ export default {
     IonLabel,
     IonSpinner,
     IonAvatar,
+    IonButton,
+    IonBackButton,
   },
 
   setup() {
     const router = useRouter();
+    const route = useRoute();
+
+    const ingredient = route.params.ingredient as string;
 
     const state = reactive({
-      lstIngredient: [] as Ingredient[],
+      lstDrinks: [] as Drink[],
       loading: false,
     });
 
-    const fetchIngredients = async () => {
+    const fetchDrinkByIngredient = async (ingredient: string) => {
       state.loading = true;
 
       const res = await axios.get(
-        "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
+        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`
       );
 
       if (res.data) {
-        state.lstIngredient = res.data?.drinks;
-
-        state.lstIngredient.sort(function (a, b) {
-          return a.strIngredient1.localeCompare(b.strIngredient1);
-        });
+        state.lstDrinks = res.data?.drinks;
       }
       state.loading = false;
     };
 
-    const ingredientImage = (ingredient: string) => {
-      return `https://www.thecocktaildb.com/images/ingredients/${encodeURI(
-        ingredient
-      )}-Small.png`;
-    };
-
-    fetchIngredients();
+    fetchDrinkByIngredient(ingredient);
 
     return {
       router,
       state,
-      ingredientImage,
+      ingredient,
     };
   },
 };

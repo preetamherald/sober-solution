@@ -28,6 +28,10 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/Tab3.vue')
       }
     ]
+  },
+  {
+    path: '/drinks-by-igredients/:ingredient',
+    component: () => import('@/views/DrinksByIngredient.vue')
   }
 ]
 
