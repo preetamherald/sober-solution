@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Search By Ingredient</ion-title>
+        <ion-title>What's in Stock?</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content v-if="state.loading">
@@ -115,7 +115,7 @@ export default {
 <style>
 .loading-center {
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   height: 90vh;
 }

@@ -114,7 +114,7 @@ export default {
 <style>
 .loading-center {
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   height: 90vh;
 }

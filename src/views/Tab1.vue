@@ -14,7 +14,7 @@
       <ion-refresher slot="fixed" @ionRefresh="doRefresh">
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
-      <drink-card :drink="state.randomCocktail"/>
+      <drink-card :drink="state.randomCocktail" />
     </ion-content>
   </ion-page>
 </template>
@@ -32,7 +32,7 @@ import {
 } from "@ionic/vue";
 import { reactive } from "vue";
 import axios from "axios";
-import DrinkCard from '@/components/DrinkCard.vue';
+import DrinkCard from "@/components/DrinkCard.vue";
 
 export default {
   name: "Tab1",
@@ -90,7 +90,7 @@ export default {
 <style>
 .loading-center {
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   height: 90vh;
 }
